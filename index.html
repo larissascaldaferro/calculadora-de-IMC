@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Calculadora de IMC</h1>
+        <form action="cadrastro.jascript">
+                 <p>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="no" id="nome">
+                </p>
+                <p>
+                    <label for="altura">Altura:</label>
+                    <input type="number" name="al" id="altura">
+                </p>
+                <p>
+                    <label for="peso">Peso:</label>
+                    <input type="number" name="pe" id="peso">
+                </p>
+
+                <input type="button" value="calcular" onclick="calculo()">
+        
+        </form>
+       <div id="res"></div>
+    </main>
+    <script>
+        
+        function calculo(){
+            let nom=document.getElementById('nome').value
+            let alt=document.getElementById('altura').value
+            let pes=document.getElementById('peso').value
+            let res=document.getElementById('res')
+            res.innerHTML=''
+            let s=(pes/(alt**2)).toFixed(1)
+            let valor=''
+            if (nom !=='' && alt !=='' && pes !==''){
+               
+            
+                if(s<=18.5){
+                    valor='abaixo do peso.'
+            }
+                else if(s<=25){
+                    valor='com peso ideal. Parabéns!!'
+  
+            }
+
+                else if (s <=30){
+                    valor='com sobrepeso grau 1.'
+            }
+                else if( s<=40){
+                    valor='com obsidade grau 2.'
+            }
+                else {
+                    valor='com obsidade morbida grau 3.'
+            }
+            res.innerHTML+=`Olá ${nom}! Você esta ${valor} `
+        }
+                
+                
+            else {
+                res.innerHTML+=('preencha todos os campos!')
+                let valor=''
+                
+            }
+            
+          
+
+
+
+        }
+    </script>
+</body>
+</html>
