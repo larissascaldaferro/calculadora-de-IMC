@@ -1,2 +1,2 @@
 # calculadora-de-IMC
- calculadora
+(índice de massa corporal)
